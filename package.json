@@ -1,25 +1,23 @@
 {
-  "name": "docker",
+  "name": "@capire/bookshop",
   "version": "1.0.0",
-  "description": "A simple CAP project.",
-  "repository": "<Add your repository here>",
-  "license": "UNLICENSED",
-  "private": true,
-  "dependencies": {
-    "@sap/cds": "^7",
-    "express": "^4",
-    "@sap/cds-hana": "^2"
-  },
+  "description": "A simple self-contained bookshop service.",
+  "files": [
+    "app",
+    "srv",
+    "db",
+    "index.cds"
+  ],
   "devDependencies": {
-    "@cap-js/sqlite": "^1",
-    "@sap/cds-dk": "^7"
+    "@cap-js/sqlite": ">=1"
+  },
+  "dependencies": {
+    "@sap/cds": ">=7",
+    "express": "^4.17.1"
   },
   "scripts": {
-    "start": "cds-serve"
-  },
-  "cds": {
-    "requires": {
-      "db": "hana"
-    }
+    "genres": "cds serve test/genres.cds",
+    "start": "cds-serve",
+    "watch": "cds watch"
   }
 }

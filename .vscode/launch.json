@@ -5,19 +5,21 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "cds serve",
-      "request": "launch",
+      "name": "Attach to...",
       "type": "node",
-      "cwd": "${workspaceFolder}",
-      "runtimeExecutable": "cds",
-      "args": [
-        "serve",
-        "--with-mocks",
-        "--in-memory?"
-      ],
-      "skipFiles": [
-        "<node_internals>/**"
-      ]
+      "request": "attach",
+      "processId": "${command:PickProcess}",
+      "skipFiles": ["<node_internals>/**"]
+    },
+    {
+      "name": "cds run",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["-n"],
+      "args": ["--", "cds", "run", "--with-mocks", "--in-memory?"],
+      "console": "integratedTerminal",
+      "skipFiles": ["<node_internals>/**"]
     }
   ]
 }
