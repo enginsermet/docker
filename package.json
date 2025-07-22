@@ -13,11 +13,17 @@
   },
   "dependencies": {
     "@sap/cds": ">=7",
+    "@sap/cds-hana": "^2.1.0",
     "express": "^4.17.1"
   },
   "scripts": {
     "genres": "cds serve test/genres.cds",
     "start": "cds-serve",
     "watch": "cds watch"
+  },
+    "cds": {
+    "requires": {
+      "db": "hana"
+    }
   }
 }
